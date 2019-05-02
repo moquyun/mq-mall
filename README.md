@@ -25,7 +25,7 @@ localhost:8080
 ├── www // 网站文件根目录  
 │ │── common // 公共组件  
 │ ├── css // css样式文件夹  
-│ ├── images // 图片文件夹 
-│ ├── js // js文件夹
-│ └── index.html // 网站首页
+│ ├── images // 图片文件夹  
+│ ├── js // js文件夹  
+│ └── index.html // 网站首页  
 

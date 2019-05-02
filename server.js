@@ -17,12 +17,22 @@ let server = http.createServer((req,res) => {
         pathname = url.parse(req.url).pathname;
         // res.writeHead(200, {'Content-Type': 'text/plain'});
         //url-route
+        console.log(pathname);
         switch(pathname){
             case "/post":
                 res.write("sda");
                 res.end();break;
             default:
-                fs.readFile("./www" + pathname,(error,data) =>{
+                let starUrl = '';
+                if(pathname === '/'){
+                    starUrl = "./www/index.html";
+                }else{
+                    starUrl = "./www" + pathname;
+                }
+                if(pathname.indexOf('.css') != -1){//css文件社设置请求头
+                    res.writeHead(200, {'Content-Type': 'text/css'});
+                }
+                fs.readFile(starUrl,(error,data) =>{
                     if(error === null){
                         res.write(data);
                         res.end();
@@ -31,6 +41,6 @@ let server = http.createServer((req,res) => {
         }
     }
 });
-server.listen("8080",_config.hostname,()=>{
-    console.log("star...");
+server.listen("8080","localhost",()=>{
+    console.log("   server star");
 });
