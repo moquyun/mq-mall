@@ -76,3 +76,5 @@ typings/
 
 #my
 /.idea
+.DS_Store
+package-lock.json
