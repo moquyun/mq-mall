@@ -41,6 +41,6 @@ let server = http.createServer((req,res) => {
         }
     }
 });
-server.listen("8080","localhost",()=>{
+server.listen("8080","10.11.58.100",()=>{
     console.log("   server star");
 });

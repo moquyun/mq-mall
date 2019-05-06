@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.2",
+    "http-proxy-middleware": "^0.19.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass-china": "^3.1.0",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "gulp": "^3.0.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "mall",
+  "description": "",
+  "version": "1.0.0",
+  "main": "config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moquyun/mq-mall.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moquyun/mq-mall/issues"
+  },
+  "homepage": "https://github.com/moquyun/mq-mall#readme"
+}

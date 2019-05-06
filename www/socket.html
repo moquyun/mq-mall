@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/socket.io/2.2.0/socket.io.js"></script>
+    <style media="screen">
+        *{margin:0;padding:0;}
+        li{list-style:none;}
+        div.box{width:300px;height:500px;border:3px solid #888;margin:30px auto;box-shadow:1px 1px 10px;
+            display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px 0;}
+        .box .window{width:280px;height:300px;border:1px solid #999;border-radius:5px;overflow:auto;}
+        .box .window ul{display:flex;flex-direction:column;padding:10px;}
+        .box .window ul li{font:12px/22px "";background:#999;margin:1px;text-align:center;
+            border-radius:3px;display:block;color:#fff;align-self:start;padding:0 5px;}
+        .box .window ul li.message{background:blue;}
+        .box .window ul li.leave{background:#999;align-self:center;}
+        .box .window ul li.enter{background:#000;align-self:center;}
+        textarea{width:280px;margin-top:20px;}
+        .btn{margin-top:20px;width:100px;border:1px solid #999;text-align:center;background:#8ff;color:#666;border-radius:3px;box-shadow:1px 1px 5px;cursor:pointer;
+        }
+    </style>
+</head>
+<body >
+
+<div class="box">
+    <div class="window">
+        <ul>
+            <li class="leave" style="background:#8ff">欢迎光临！</li>
+        </ul>
+    </div>
+    <textarea id="sendTxt" rows="8" cols="80"></textarea>
+    <span id="sendBtn" class="btn">发送</span>
+</div>
+
+<script type="text/javascript">
+    var socket = io("ws://10.11.58.100:3000");
+    var wd = document.querySelector("ul"),
+        textr = document.querySelector("textarea"),
+        btn = document.querySelector(".btn");
+    var windowH = document.querySelector(".window");
+
+    // 第一个enter代表是进入事件，第二个enter为了显示需要
+    socket.on('enter',function(data){
+        showMessage(data,'enter');
+    })
+    socket.on('message',function(data){
+        showMessage(data,'message');
+    })
+    socket.on('leave',function(data){
+        showMessage(data,'leave');
+    })
+
+    function showMessage(str,type){
+        let li1 = document.createElement("li");
+        li1.innerHTML = str;
+        if(type == "enter"){
+            li1.className = "enter";
+        }else if(type == "leave"){
+            li1.className = "leave";
+        }else if(type == "message"){
+            li1.className = "message";
+        }
+        wd.appendChild(li1);
+        stop();
+    }
+
+    btn.onclick = function(){
+        if(textr.value != ""){
+            var  msg = textr.value == " " ? "&nbsp;" : textr.value;
+            socket.emit('message',msg);
+            textr.value = "";
+            stop();
+        }
+    }
+    function stop(){
+        var aWd = wd.children,
+            sum = 0;
+        for(var i=0;i<aWd.length;i++){
+            sum += aWd[i].offsetHeight;
+        }
+        windowH.scrollTop = sum;
+    }
+</script>
+</body>
+
+</html>
