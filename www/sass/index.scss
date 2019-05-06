@@ -1,70 +1,70 @@
-//$r:#000;
-//$rr:#f88;
-//span{color:$r}
-//li{font:12px/14px ""}
-//div{}
-//b{}
-//i{}
+$r:#000;
+$rr:#f88;
+span{color:$r}
+li{font:12px/14px ""}
+div{}
+b{}
+i{}
 
-//
-//$list:(box1 100px 200px)(box2 100px 200px)(box3 100px 200px);
-//@each $a,$b,$c in $list {
-//  .#{$a}{
-//    width:$b;
-//    height:$c;
-//  }
-//}
 
-//$map:(h1:20px,h2:30px);
-//@each $k,$v in $map{
-//  #{$k}{
-//    width:$v;
-//  }
-//}
+$list:(box1 100px 200px)(box2 100px 200px)(box3 100px 200px);
+@each $a,$b,$c in $list {
+  .#{$a}{
+    width:$b;
+    height:$c;
+  }
+}
 
-//5.sass嵌套
-//.box{
-//  width:30px;
-//  .box-r{
-//    background:#fff;
-//    .box-r-t{
-//      border:0;
-//      &:hover{//伪类
-//        background:#000;
-//      }
-//    }
-//  }
-//}
-//
-//.box1{
-//  width:200px;
-//  border:{
-//    style:solid;
-//    width:10px;
-//    left-color:red;
-//    right-color: blue;
-//  }
-//}
+$map:(h1:20px,h2:30px);
+@each $k,$v in $map{
+  #{$k}{
+    width:$v;
+  }
+}
 
-//6.mixin混合（代码块）
-//@mixin transform($deg){
-//  -webkit-transform: rotate($deg);
-//  -moz-transform: rotate($deg);
-//  -ms-transform: rotate($deg);
-//  -o-transform: rotate($deg);
-//  transform: rotate($deg);
-//}
-//.box1{
-//  @include transform(45deg);
-//}
-//.box2{
-//  @include transform(135deg);
-//
-//}
-//.box3{
-//  @include transform(180deg);
-//
-//}
+5.sass嵌套
+.box{
+  width:30px;
+  .box-r{
+    background:#fff;
+    .box-r-t{
+      border:0;
+      &:hover{//伪类
+        background:#000;
+      }
+    }
+  }
+}
+
+.box1{
+  width:200px;
+  border:{
+    style:solid;
+    width:10px;
+    left-color:red;
+    right-color: blue;
+  }
+}
+
+6.mixin混合（代码块）
+@mixin transform($deg){
+  -webkit-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  -o-transform: rotate($deg);
+  transform: rotate($deg);
+}
+.box1{
+  @include transform(45deg);
+}
+.box2{
+  @include transform(135deg);
+
+}
+.box3{
+  @include transform(180deg);
+
+}
 
 //7.函数
 $hfs:16px;

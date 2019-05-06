@@ -1,2 +1,2 @@
 let aaa = "11";
-let bbb = 0;
+const bbb = 0;

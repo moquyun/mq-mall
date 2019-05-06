@@ -5,20 +5,38 @@ let concat = require("gulp-concat"),
     uglify = require("gulp-uglify"),
     rename = require("gulp-rename");
 let babel = require("gulp-babel");
-let sass = require("gulp-sass-china"),
-    minifyCSS = require("gulp-minify-css");
-
-//dest
-gulp.task("index",()=>{
-   gulp.src(["www/**/*"]).pipe(gulp.dest("server")).pipe(connect.reload());
-});
+let sass = require("gulp-sass-china");
+    // minifyCSS = require("gulp-minify-css");
 
 //watch
 gulp.task("watch",()=>{
-    gulp.watch(["www/index.html","www/sass/index.scss"],["index","sass"]);
-    // gulp.watch("www/**/*",["index"]);
-    // gulp.watch("www/sass/index.scss",["sass"]);
+    // gulp.watch([
+    //     "www/index.html",
+    //     "www/sass/index.scss"
+    // ],["index","sass"]);
+    gulp.watch(["www/index.html"],["index"]);
+    gulp.watch(["www/sass/*.scss"],["sass"]);
+
 });
+
+
+
+//dest
+gulp.task("index",()=>{
+   gulp.src(["www/*.html"]).pipe(gulp.dest("server")).pipe(connect.reload());
+});
+gulp.task("destTo",()=>{
+    gulp.src(["www/css/public.css"]).pipe(gulp.dest("server/css")).pipe(connect.reload());
+});
+
+//sass
+gulp.task("sass",()=>{
+    gulp.src("www/sass/common.scss")
+        .pipe(sass().on("error",sass.logError))
+        .pipe(gulp.dest("server/css"))
+        .pipe(connect.reload());
+});
+
 
 //server
 gulp.task("server",()=>{
@@ -40,17 +58,8 @@ gulp.task("server",()=>{
        }
    });
 });
-
 //all-----
 gulp.task("all",["watch","server"]);
-
-//sass
-gulp.task("sass",()=>{
-    gulp.src("www/sass/commons.scss")
-        .pipe(sass().on("error",sass.logError))
-        .pipe(gulp.dest("server/css"))
-        .pipe(connect.reload());
-});
 
 // changeJS --不能压缩匿名函数
 gulp.task("changeJS",()=>{
@@ -66,5 +75,5 @@ gulp.task("changeJS",()=>{
 gulp.task('es6Toes5',()=>{
     gulp.src("www/js/index.js")
         .pipe(babel())
-        .pipe(gulp.dest('server/js'));
+        .pipe(gulp.dest('server/jss'));
 });
