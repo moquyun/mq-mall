@@ -16,29 +16,35 @@ gulp.task("watch",()=>{
     // ],["index","sass"]);
     gulp.watch(["www/index.html"],["index"]);
     gulp.watch(["www/sass/*.scss"],["sass"]);
-
+    gulp.watch(["www/js/*"],["destJS"]);
 });
 
 
 
-//dest
+//根目录html改变更新到server
 gulp.task("index",()=>{
    gulp.src(["www/*.html"]).pipe(gulp.dest("server")).pipe(connect.reload());
 });
-gulp.task("destTo",()=>{
-    gulp.src(["www/css/public.css"]).pipe(gulp.dest("server/css")).pipe(connect.reload());
-});
-
-//sass
+//sass改变编译后更新到server
 gulp.task("sass",()=>{
     gulp.src("www/sass/common.scss")
         .pipe(sass().on("error",sass.logError))
         .pipe(gulp.dest("server/css"))
         .pipe(connect.reload());
 });
+//js改变更新到server
+gulp.task("destJS",()=>{
+    gulp.src(["www/js/*"]).pipe(gulp.dest("server/js")).pipe(connect.reload());
+});
 
+//手动转移到server的文件-----gulp desAll
+gulp.task("destAll",()=>{
+    gulp.src(["www/css/public.css"]).pipe(gulp.dest("server/css"));
+    gulp.src(["www/lib/*"]).pipe(gulp.dest("server/lib"));
 
-//server
+});
+
+//server启动
 gulp.task("server",()=>{
    connect.server({
       root:"server",
@@ -60,6 +66,9 @@ gulp.task("server",()=>{
 });
 //all-----
 gulp.task("all",["watch","server"]);
+
+
+
 
 // changeJS --不能压缩匿名函数
 gulp.task("changeJS",()=>{
