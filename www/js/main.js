@@ -1,6 +1,6 @@
 require.config({
     paths: {
-        "jquery": "https://cdn.staticfile.org/jquery/2.2.4/jquery",
+        "jquery": "/libs/jquery",
     }
 });
 // 引入模块
@@ -12,15 +12,13 @@ require(["jquery"],function (_jq) {
         $('header').load('layout.html #layout-header',()=>{
             new TopNews($("#TopNews"));
         });
-
         $('nav').load('layout.html #nav.layout',()=>{
             new NavHover(document.getElementById("nav-b"),{nav:navJson});
         });
-
         $('footer').load('layout.html #footer-layout');
     }
-
     new LayoutLoad();
+
 
     //顶部小喇叭
     class TopNews{

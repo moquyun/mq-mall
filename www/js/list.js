@@ -1,6 +1,6 @@
 require.config({
     paths: {
-        "jquery": "https://cdn.staticfile.org/jquery/2.2.4/jquery",
+        "jquery": "/libs/jquery",
     }
 });
 // 引入模块
