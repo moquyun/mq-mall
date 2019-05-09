@@ -1,0 +1,25 @@
+$hfs:20px;
+
+@function pTr($px){
+  @return $px/$hfs*1rem;
+}
+main{
+  background:#F5F5F5;
+  .title{
+    overflow: hidden;padding:pTr(20px) 0;
+    font:[pTr(12px)]/2 "";
+    h3{font:[pTr(12px)]/2 "";float:left;}
+    h4{font:[pTr(12px)]/2 "";float:left;}
+    i.jian{float:left;display:block;margin:0 pTr(2px);color:#999;}
+  }
+  .title-img{}
+
+  .fenlei{
+
+    dl{
+      padding:pTr(20px) pTr(30px);border-bottom:pTr(1px) solid #666;overflow: hidden;
+      dt{font-size:[pTr(12px)];float:left;color:#666;}
+      dd{font-size:[pTr(12px)];float:left;margin:0 pTr(10px);}
+    }
+  }
+}

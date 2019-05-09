@@ -1,104 +1,50 @@
-$r:#000;
-$rr:#f88;
-span{color:$r}
-li{font:12px/14px ""}
-div{}
-b{}
-i{}
+$hfs:20px;
 
-
-$list:(box1 100px 200px)(box2 100px 200px)(box3 100px 200px);
-@each $a,$b,$c in $list {
-  .#{$a}{
-    width:$b;
-    height:$c;
-  }
+@function pTr($px){
+  @return $px/$hfs*1rem;
 }
-
-$map:(h1:20px,h2:30px);
-@each $k,$v in $map{
-  #{$k}{
-    width:$v;
-  }
-}
-
-5.sass嵌套
-.box{
-  width:30px;
-  .box-r{
-    background:#fff;
-    .box-r-t{
-      border:0;
-      &:hover{//伪类
-        background:#000;
+main{
+  .banner{
+    position:relative;
+    .banner-main{
+      ul{
+        position:relative;height:pTr(420px);width:100%;overflow: hidden;
+        li{
+          position:absolute;width:100%;left:100%;z-index: -999;
+          &:nth-child(1){left:0;z-index:1;}
+          a{
+            display: block;position:relative;width:100%;
+            img{
+              display: block;position:absolute;left:50%;transform: translate(-50%,0);
+            }
+          }
+        }
       }
     }
+    .prev{
+      margin-left: -610px;position: absolute;top: 50%;
+      left: 50%;width: 50px;height: 50px;margin-top: -25px;
+      background-color: #FCE8D3;
+      background-image: url(../images/template.png);
+      background-repeat: no-repeat;
+      -moz-background-size: auto;
+      background-size: auto;
+      -moz-border-radius: 100%;
+      border-radius: 100%;
+      opacity: 0.8;
+      cursor: pointer;z-index:2;
+      &:hover{background-color: #AAA; opacity: 1;}
+    }
+    .next{
+      position: absolute;z-index: 1;top: 50%;left: 50%;
+      width: 50px;height: 50px;margin-top: -25px;
+      background-color: #FCE8D3;background-image: url(../images/template.png);
+      background-repeat: no-repeat;-moz-background-size: auto;background-size: auto;
+      -moz-border-radius: 100%;border-radius: 100%;opacity: 0.8;cursor: pointer;
+      margin-left: 560px;background-position: 0 -50px;
+      &:hover{background-color: #AAA; opacity: 1 }
+    }
+
   }
-}
 
-.box1{
-  width:200px;
-  border:{
-    style:solid;
-    width:10px;
-    left-color:red;
-    right-color: blue;
-  }
-}
-
-6.mixin混合（代码块）
-@mixin transform($deg){
-  -webkit-transform: rotate($deg);
-  -moz-transform: rotate($deg);
-  -ms-transform: rotate($deg);
-  -o-transform: rotate($deg);
-  transform: rotate($deg);
-}
-.box1{
-  @include transform(45deg);
-}
-.box2{
-  @include transform(135deg);
-
-}
-.box3{
-  @include transform(180deg);
-
-}
-
-//7.函数
-$hfs:16px;
-html{
-  font-size:$hfs;
-}
-.box1{
-  width:100px/$hfs*1rem;
-}
-.box3{
-  width:100px/16px*1rem;
-}
-
-
-//必须声明在使用前面
-@function pTr($px){
-  @return $px/16px*1rem;
-}
-.box2{
-  width:pTr(100px);
-}
-
-
-//8. sass的继承
-.jx{
-  width:200px;
-  height:300px;
-  background:#f88;
-}
-
-.jx1{
-  @extend .jx;
-}
-.jx2{
-  @extend .jx;
-  border:0;
 }

@@ -17,9 +17,6 @@ body{font-size:pTr(16px);;}
   align-items: center;
 }
 
-
-
-
 header{
   background:#4B5459;height:pTr(36px);color:#fff;
   .header-l{
@@ -125,7 +122,7 @@ nav{
     }
   }
   ul.nav-b{
-    position:absolute;bottom:pTr(22px);height:pTr(30px);font:700 [pTr(14px)]/[pTr(30px)] "";
+    position:absolute;bottom:pTr(22px);height:pTr(30px);font:700 [pTr(14px)]/[pTr(30px)] "";z-index:2;
     li{
       float:left;padding:0 pTr(24px);margin-top:pTr(6px);
       &:hover .nav-li{border-bottom:pTr(3px) solid #12B7F5;color:#12B7F5;}
@@ -164,10 +161,22 @@ nav{
     li.xian{margin:pTr(13px) pTr(1px) 0 pTr(1px);border-left:pTr(1px) solid #999;height:pTr(15px);padding:0;}
   }
 }
-//old
-main{background:#f88}
 
-
+//footer
+footer{
+  padding:pTr(35px) 0;height:pTr(116px);line-height:pTr(23px);border-top:pTr(1px) solid #e7e7e7;background:#fff;color:#666;box-sizing: border-box;
+  .footer-box{
+      display:flex;justify-content: space-between;
+    .logo{
+      img{
+        height:pTr(46px);margin-right:pTr(10px);filter: grayscale(100%);
+      }
+    }
+    .footer-info{
+      padding:pTr(10px);font-size:pTr(12px);
+    }
+  }
+}
 @media screen and (max-width: 1089px) and (min-width: 991px){
   .layout{width:pTr(940px);}
 }

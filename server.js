@@ -15,19 +15,26 @@ let server = http.createServer((req,res) => {
     if(req.url != "/favicon.ico"){
         var req_url = req.url,
         pathname = url.parse(req.url).pathname;
-        // res.writeHead(200, {'Content-Type': 'text/plain'});
         //url-route
         console.log(pathname);
         switch(pathname){
             case "/post":
                 res.write("sda");
                 res.end();break;
+            // case "/api/nav":
+            //     navSql((res)=>{
+            //         res.write(JSON.stringify(res));
+            //         res.end();
+            //     });
+            //     // res.write(JSON.stringify(navData));
+            //     break;
+
             default:
                 let starUrl = '';
                 if(pathname === '/'){
-                    starUrl = "./www/index.html";
+                    starUrl = "./server/index.html";
                 }else{
-                    starUrl = "./www" + pathname;
+                    starUrl = "./server" + pathname;
                 }
                 if(pathname.indexOf('.css') != -1){//css文件社设置请求头
                     res.writeHead(200, {'Content-Type': 'text/css'});
@@ -41,6 +48,21 @@ let server = http.createServer((req,res) => {
         }
     }
 });
-server.listen("8080","10.11.58.100",()=>{
+server.listen("8888","10.11.58.102",()=>{
     console.log("   server star");
 });
+
+/*db*/
+// function navSql(cb){
+//     var _data = [];
+//     $db.get('nav',`tid=0`,(data)=>{
+//         for(let i=0;i<data.length;i++){
+//             _data[i] = {
+//                 title:data[i].title
+//             }
+//
+//         }
+//         console.log(_data);
+//         cb(data);
+//     });
+// }

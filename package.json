@@ -1,14 +1,15 @@
 {
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.7.0",
     "gulp-minify-css": "^1.2.4",
     "gulp-rename": "^1.4.0",
+    "gulp-sass-china": "^3.1.0",
     "gulp-uglify": "^3.0.1",
     "http-proxy-middleware": "^0.19.1",
-    "gulp-babel": "^7.0.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-sass-china": "^3.1.0",
+    "mysql": "^2.17.1",
     "socket.io": "^2.2.0"
   },
   "devDependencies": {

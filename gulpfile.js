@@ -5,8 +5,8 @@ let concat = require("gulp-concat"),
     uglify = require("gulp-uglify"),
     rename = require("gulp-rename");
 let babel = require("gulp-babel");
-let sass = require("gulp-sass-china");
-    // minifyCSS = require("gulp-minify-css");
+let sass = require("gulp-sass-china"),
+    minifyCSS = require("gulp-minify-css");
 
 //watch
 gulp.task("watch",()=>{
@@ -14,7 +14,7 @@ gulp.task("watch",()=>{
     //     "www/index.html",
     //     "www/sass/index.scss"
     // ],["index","sass"]);
-    gulp.watch(["www/index.html"],["index"]);
+    gulp.watch(["www/*.html"],["index"]);
     gulp.watch(["www/sass/*.scss"],["sass"]);
     gulp.watch(["www/js/*"],["destJS"]);
 });
@@ -27,8 +27,27 @@ gulp.task("index",()=>{
 });
 //sass改变编译后更新到server
 gulp.task("sass",()=>{
-    gulp.src("www/sass/common.scss")
+    // gulp.src("www/sass/common.scss")
+    //     .pipe(sass().on("error",sass.logError))
+    //     .pipe(gulp.dest("server/css"))
+    //     .pipe(minifyCSS())
+    //     .pipe(rename('common.min.css'))
+    //     .pipe(gulp.dest("server/css"))
+    //     .pipe(connect.reload());
+    //
+    // gulp.src("www/sass/index.scss")
+    //     .pipe(sass().on("error",sass.logError))
+    //     .pipe(gulp.dest("server/css"))
+    //     .pipe(minifyCSS())
+    //     .pipe(rename('index.min.css'))
+    //     .pipe(gulp.dest("server/css"))
+    //     .pipe(connect.reload());
+
+    gulp.src("www/sass/list.scss")
         .pipe(sass().on("error",sass.logError))
+        .pipe(gulp.dest("server/css"))
+        .pipe(minifyCSS())
+        .pipe(rename('list.min.css'))
         .pipe(gulp.dest("server/css"))
         .pipe(connect.reload());
 });
@@ -44,17 +63,18 @@ gulp.task("destAll",()=>{
 
 });
 
-//server启动
+//server启动host:'10.11.58.102',
 gulp.task("server",()=>{
    connect.server({
       root:"server",
        port:8080,
+       host:'192.168.1.101',
        livereload:true,//是否可以自动刷新
        middleware:function(connect,opt){
             return [
                 //http://localhost:8888/api/getIpInfo.php?ip=
                 proxy("/api",{
-                    target:'http://ip.taobao.com/service',
+                    target:'http://api.moquyun.com/qf',
                     changeOrigin:true,
                     pathRewrite:{
                         '^/api':''

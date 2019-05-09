@@ -1,13 +1,27 @@
 require.config({
     paths: {
-        // "jquery": "lib/jquery.min",
         "jquery": "https://cdn.staticfile.org/jquery/2.2.4/jquery",
-
     }
 });
-
 // 引入模块
-require(["jquery",],function (_jq) {
+require(["jquery"],function (_jq) {
+    const navJson = '/json/navTest.json';
+
+    //功能模块加载
+    function LayoutLoad(){
+        $('header').load('layout.html #layout-header',()=>{
+            new TopNews($("#TopNews"));
+        });
+
+        $('nav').load('layout.html #nav.layout',()=>{
+            new NavHover(document.getElementById("nav-b"),{nav:navJson});
+        });
+
+        $('footer').load('layout.html #footer-layout');
+    }
+
+    new LayoutLoad();
+
     //顶部小喇叭
     class TopNews{
         constructor(ele){
@@ -30,119 +44,30 @@ require(["jquery",],function (_jq) {
             },2000);
         }
     }
-    new TopNews($("#TopNews"));
+
 
     //nav滑动菜单
     class NavHover{
         constructor(ele,url){
-            console.log(ele,url);
             this.ele = ele;
+            this.url = url;
             this.init();
-            // this.addEve();
         }
         init(){
-            this.json = [
-                {
-                    title:"首页",
-                    data:[
-                        {
-                            title:"床品a",
-                            data:[
-                                {
-                                    src:"https://www.shopncdemo.com/upload/image/dd/4d/dd4d8b0d91d7aeca57c239fbce9d1eff.jpeg",
-                                    title:"床上用品1",
-                                    href:"#"
-                                },
-                                {
-                                    src:"https://www.shopncdemo.com/upload/image/dd/4d/dd4d8b0d91d7aeca57c239fbce9d1eff.jpeg",
-                                    title:"床上用品2",
-                                    href:"#"
-                                },
-                                {
-                                    src:"https://www.shopncdemo.com/upload/image/dd/4d/dd4d8b0d91d7aeca57c239fbce9d1eff.jpeg",
-                                    title:"床上用品3",
-                                    href:"#"
-                                }
-                            ]
-                        },
-                        {
-                            title:"床品b",
-                            data:[
-                                {
-                                    src:"https://www.shopncdemo.com/upload/image/dd/4d/dd4d8b0d91d7aeca57c239fbce9d1eff.jpeg",
-                                    title:"床上用品4",
-                                    href:"#"
-                                },
-                                {
-                                    src:"https://www.shopncdemo.com/upload/image/dd/4d/dd4d8b0d91d7aeca57c239fbce9d1eff.jpeg",
-                                    title:"床上用品5",
-                                    href:"#"
-                                },
-                                {
-                                    src:"https://www.shopncdemo.com/upload/image/dd/4d/dd4d8b0d91d7aeca57c239fbce9d1eff.jpeg",
-                                    title:"床上用品6",
-                                    href:"#"
-                                }
-                            ]
-                        }
-                    ]
+            let _this = this;
+            $.ajax({
+                url:this.url.nav,
+                success:function(res){
+                    _this.json = res;
+                    _this.initData();
+
                 },
-                {
-                    title:"首页2",
-                    data:[
-                        {
-                            title:"床品c",
-                            data:[
-                                {
-                                    src:"https://www.shopncdemo.com/upload/image/dd/4d/dd4d8b0d91d7aeca57c239fbce9d1eff.jpeg",
-                                    title:"床上用品1",
-                                    href:"#"
-                                },
-                                {
-                                    src:"https://www.shopncdemo.com/upload/image/dd/4d/dd4d8b0d91d7aeca57c239fbce9d1eff.jpeg",
-                                    title:"床上用品2",
-                                    href:"#"
-                                },
-                                {
-                                    src:"https://www.shopncdemo.com/upload/image/dd/4d/dd4d8b0d91d7aeca57c239fbce9d1eff.jpeg",
-                                    title:"床上用品3",
-                                    href:"#"
-                                }
-                            ]
-                        },
-                        {
-                            title:"床品b",
-                            data:[
-                                {
-                                    src:"https://www.shopncdemo.com/upload/image/dd/4d/dd4d8b0d91d7aeca57c239fbce9d1eff.jpeg",
-                                    title:"床上用品4",
-                                    href:"#"
-                                },
-                                {
-                                    src:"https://www.shopncdemo.com/upload/image/dd/4d/dd4d8b0d91d7aeca57c239fbce9d1eff.jpeg",
-                                    title:"床上用品5",
-                                    href:"#"
-                                },
-                                {
-                                    src:"https://www.shopncdemo.com/upload/image/dd/4d/dd4d8b0d91d7aeca57c239fbce9d1eff.jpeg",
-                                    title:"床上用品6",
-                                    href:"#"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {title:"箱包服饰"},
-                {title:"母婴"},
-                {title:"家电"},
-                {title:"图书"},
-                {title:"美食"},
-                {title:"洗护"},
-                {title:"生活"},
-                {title:"超值精品"},
-                {title:"限时秒杀"},
-                {title:"品牌专区"},
-            ];
+                error:function(err){
+                    console.log(err)
+                }
+            });
+        }
+        initData(){
             let str = "";
             for(let i=0;i<this.json.length;i++){
                 var sLi = "";
@@ -179,13 +104,8 @@ require(["jquery",],function (_jq) {
                 sLi += `</li>`;
                 str += sLi;
             }
-
             this.ele.innerHTML = str;
-        }
-        addEve(){
-
         }
     }
 
-    new NavHover(document.getElementById("nav-b"),"http://baidu.com");
 });

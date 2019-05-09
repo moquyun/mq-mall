@@ -257,7 +257,8 @@ nav {
     position: absolute;
     bottom: 1.1rem;
     height: 1.5rem;
-    font: 700 0.7rem/1.5rem ""; }
+    font: 700 0.7rem/1.5rem "";
+    z-index: 2; }
     nav ul.nav-b li {
       float: left;
       padding: 0 1.2rem;
@@ -316,8 +317,24 @@ nav {
       height: 0.75rem;
       padding: 0; }
 
-main {
-  background: #f88; }
+footer {
+  padding: 1.75rem 0;
+  height: 5.8rem;
+  line-height: 1.15rem;
+  border-top: 0.05rem solid #e7e7e7;
+  background: #fff;
+  color: #666;
+  box-sizing: border-box; }
+  footer .footer-box {
+    display: flex;
+    justify-content: space-between; }
+    footer .footer-box .logo img {
+      height: 2.3rem;
+      margin-right: 0.5rem;
+      filter: grayscale(100%); }
+    footer .footer-box .footer-info {
+      padding: 0.5rem;
+      font-size: 0.6rem; }
 
 @media screen and (max-width: 1089px) and (min-width: 991px) {
   .layout {
