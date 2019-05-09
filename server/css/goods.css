@@ -1,0 +1,259 @@
+.goods-title {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 20px 0;
+  font-size: 12px;
+  color: #333;
+  line-height: 16px; }
+  .goods-title .goods-title-a {
+    color: #333; }
+  .goods-title i.jian {
+    display: inline-block;
+    vertical-align: top;
+    width: 5px;
+    height: 11px;
+    margin: 3px 5px 2px 5px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAALCAYAAAC3ZUeVAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAK6wAACusBgosNWgAAABZ0RVh0Q3JlYXRpb24gVGltZQAxMC8yNC8xODAVmroAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAAAtUlEQVQImWOcOmu+7aZraw8zIAEm5n8/Vwdp+iagCDKycbv8//+/I0TbPxMmyPxb8fcra3nV1d9/MUzSFFUXv/7m1n5G9wIfBgYGBoY4kxCBL19/rmdgYLjNBNOy6MyaDzzc7IH//v1LgQvCVDIxMW1gYmBgYEg29pb/8vXnMQYGhsPrrm8OYgrSC9d595XxJBMT0+R11zfXMTAwMLD8//V1DyMjY8WaqxsXwIxi+cvEHoruIwC6PEU5SmuUNQAAAABJRU5ErkJggg==) no-repeat 0 0;
+    -moz-background-size: 100%;
+    background-size: 100%;
+    font-size: 12px;
+    color: #333;
+    line-height: 16px; }
+
+.goods {
+  padding: 0 0 80px; }
+  .goods .goods-t .goods-t-l {
+    float: left;
+    width: 524px;
+    overflow: hidden; }
+    .goods .goods-t .goods-t-l .goods-t-l-imgL {
+      position: relative;
+      z-index: 1;
+      float: left;
+      margin-right: 14px;
+      width: 430px;
+      height: 430px;
+      border: 1px solid #E4E5E6;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box; }
+      .goods .goods-t .goods-t-l .goods-t-l-imgL .img-a {
+        position: relative;
+        display: block; }
+        .goods .goods-t .goods-t-l .goods-t-l-imgL .img-a img {
+          display: block;
+          border: medium none;
+          vertical-align: middle; }
+      .goods .goods-t .goods-t-l .goods-t-l-imgL .fangdajing {
+        z-index: 999;
+        position: absolute;
+        width: 430px;
+        height: 430px;
+        left: 0px;
+        top: 0px;
+        cursor: move; }
+    .goods .goods-t .goods-t-l .goods-t-l-imgR {
+      position: relative;
+      float: right;
+      overflow: hidden;
+      width: 78px;
+      height: 430px; }
+      .goods .goods-t .goods-t-l .goods-t-l-imgR ul.goods-min {
+        position: relative;
+        width: 100%;
+        transition-property: transform,left,top;
+        transition-duration: 0s;
+        transform: translate3d(0px, 0, 0);
+        transition-timing-function: ease;
+        box-sizing: content-box; }
+        .goods .goods-t .goods-t-l .goods-t-l-imgR ul.goods-min li.img-min {
+          position: relative;
+          zoom: 1;
+          overflow: hidden;
+          width: 78px;
+          height: 78px;
+          margin-bottom: 10px;
+          vertical-align: top; }
+          .goods .goods-t .goods-t-l .goods-t-l-imgR ul.goods-min li.img-min a.active {
+            margin: 0;
+            border: 2px solid #D65A17; }
+          .goods .goods-t .goods-t-l .goods-t-l-imgR ul.goods-min li.img-min a.img-min-a {
+            display: block;
+            width: 78px;
+            height: 78px;
+            border: 1px solid #E4E5E6; }
+            .goods .goods-t .goods-t-l .goods-t-l-imgR ul.goods-min li.img-min a.img-min-a img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              background-color: #f4f4f4; }
+  .goods .goods-t .goods-t-r {
+    position: relative;
+    float: right;
+    width: 536px;
+    padding-left: 30px;
+    word-break: break-all;
+    word-wrap: break-word; }
+    .goods .goods-t .goods-t-r .goods-t-r-t {
+      display: block;
+      margin-bottom: 20px; }
+      .goods .goods-t .goods-t-r .goods-t-r-t .tag {
+        overflow: hidden; }
+        .goods .goods-t .goods-t-r .goods-t-r-t .tag .tag-a {
+          height: 20px;
+          line-height: 20px;
+          color: #fff;
+          padding: 0 5px;
+          font-size: 12px;
+          float: left;
+          margin-right: 6px;
+          background-color: #f48f18;
+          border: 1px solid rgba(244, 143, 24, 0.3);
+          display: inline-block;
+          margin-bottom: 10px; }
+      .goods .goods-t .goods-t-r .goods-t-r-t .title {
+        position: relative;
+        padding-right: 80px;
+        margin-bottom: 7px;
+        font: 700 20px/1 ""; }
+        .goods .goods-t .goods-t-r .goods-t-r-t .title .title-r {
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 1;
+          display: block;
+          text-align: right;
+          line-height: 1.2; }
+          .goods .goods-t .goods-t-r .goods-t-r-t .title .title-r a .num {
+            font-size: 19px;
+            color: #E5564D; }
+          .goods .goods-t .goods-t-r .goods-t-r-t .title .title-r a .txt {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            padding-right: 5px; }
+      .goods .goods-t .goods-t-r .goods-t-r-t .desc {
+        width: 300px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #999; }
+    .goods .goods-t .goods-t-r .goods-t-r-c {
+      position: relative;
+      z-index: 2;
+      padding: 0 0 13px;
+      border-top: 1px dotted #dedede;
+      border-bottom: 1px dotted #E4E5E6;
+      background-color: #F7F8F9;
+      font-size: 12px;
+      line-height: 24px; }
+      .goods .goods-t .goods-t-r .goods-t-r-c hr {
+        overflow: hidden;
+        height: 1px;
+        margin: 10px 20px 10px 10px;
+        border: none;
+        border-bottom: 1px dashed #D1D2D3; }
+    .goods .goods-t .goods-t-r .goods-t-r-b {
+      margin-top: 20px;
+      margin-left: 10px; }
+      .goods .goods-t .goods-t-r .goods-t-r-b .number {
+        position: relative;
+        margin-top: 10px;
+        margin-bottom: 3px; }
+        .goods .goods-t .goods-t-r .goods-t-r-b .number .label {
+          float: left;
+          width: 54px;
+          font-size: 12px;
+          color: #666;
+          line-height: 30px; }
+        .goods .goods-t .goods-t-r .goods-t-r-b .number .selnum {
+          display: inline-block;
+          border: 1px solid #D1D2D3;
+          overflow: hidden; }
+          .goods .goods-t .goods-t-r .goods-t-r-b .number .selnum span.less {
+            border-right: 1px solid #D1D2D3;
+            cursor: pointer;
+            position: relative;
+            float: left;
+            width: 36px;
+            height: 30px;
+            background: #fff;
+            line-height: 28px; }
+          .goods .goods-t .goods-t-r .goods-t-r-b .number .selnum i.hx {
+            top: 15px;
+            left: 12px;
+            width: 10px;
+            position: absolute;
+            height: 2px;
+            overflow: hidden;
+            background: #999; }
+          .goods .goods-t .goods-t-r .goods-t-r-b .number .selnum i.sx {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            overflow: hidden;
+            background: #999;
+            top: 11px;
+            left: 16px;
+            height: 10px; }
+          .goods .goods-t .goods-t-r .goods-t-r-b .number .selnum input#buyNum {
+            text-align: center;
+            width: 60px;
+            margin: 0;
+            border: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+            box-sizing: border-box;
+            font-size: 12px;
+            color: #333;
+            position: relative;
+            float: left;
+            height: 30px;
+            background: #fff;
+            line-height: 28px;
+            font: 12px/1.5 Tahoma,Arial,"\5b8b\4f53",sans-serif;
+            vertical-align: top;
+            display: inline-block;
+            min-height: 20px;
+            padding: 4px 5px;
+            outline: 0 none; }
+          .goods .goods-t .goods-t-r .goods-t-r-b .number .selnum span.more {
+            border-left: 1px solid #D1D2D3;
+            cursor: pointer;
+            position: relative;
+            float: left;
+            width: 36px;
+            height: 30px;
+            background: #fff;
+            line-height: 28px; }
+    .goods .goods-t .goods-t-r .goods-t-r-btn {
+      position: relative;
+      z-index: 2;
+      margin-left: 12px;
+      margin-top: 30px;
+      font-size: 0; }
+      .goods .goods-t .goods-t-r .goods-t-r-btn .btn {
+        display: inline-block;
+        vertical-align: top;
+        width: 168px;
+        height: 50px;
+        margin-right: 10px;
+        padding: 0;
+        letter-spacing: normal;
+        text-align: center;
+        background-color: #F5F5F5;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        font-size: 18px;
+        line-height: 50px;
+        color: #333; }
+      .goods .goods-t .goods-t-r .goods-t-r-btn .buy-btn {
+        background-color: #FDF1EA;
+        border: 1px solid #D65A17;
+        color: #D65A17; }
+      .goods .goods-t .goods-t-r .goods-t-r-btn .cart-btn {
+        background-color: #D65A17;
+        border: 1px solid #D65A17;
+        color: #fff;
+        cursor: pointer; }

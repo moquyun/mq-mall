@@ -3,23 +3,169 @@ $hfs:20px;
 @function pTr($px){
   @return $px/$hfs*1rem;
 }
+//标签
+@mixin tag($color){
+  display: inline-block;
+  height: 20px;
+  margin-left: 6px;
+  padding: 0 5px;
+  background-color: $color;
+  font-size: 12px;
+  color: #fff;
+  line-height: 20px;
+}
 main{
   background:#F5F5F5;
-  .title{
-    overflow: hidden;padding:pTr(20px) 0;
-    font:[pTr(12px)]/2 "";
-    h3{font:[pTr(12px)]/2 "";float:left;}
-    h4{font:[pTr(12px)]/2 "";float:left;}
-    i.jian{float:left;display:block;margin:0 pTr(2px);color:#999;}
-  }
-  .title-img{}
+  .list{
+    z-index: 1;
+    padding-bottom: 80px;
+    background-color: #F5F5F5;
+    .ff-title{
+      overflow: hidden;padding:pTr(20px) 0;
+      font:[pTr(12px)]/2 "";
+      h3{font:[pTr(12px)]/2 "";float:left;}
+      h4{font:[pTr(12px)]/2 "";float:left;}
+      i.jian{float:left;display:block;margin:0 pTr(2px);color:#999;}
+    }
+    .title-img{
+      img{width:100%;}
+    }
+    .cate{
+      padding: 0 40px;background-color: #fff;overflow: hidden;
+      .fenlei.te{ border-bottom:none;}
+      .fenlei{
+        margin-top: 10px;
+        border-bottom: 1px solid #eaeaea;
+        overflow: hidden;
+        dl{
+          width: 930px;
+          font-size: 14px;
+          color: #999;
+          dt{
+            float: left;
+            font-weight: 700;
+            color: #D65A17;
+            margin-right: 28px;
+            font-size: 14px;
+          }
+          dd{
+            //overflow: hidden;
+            //float: left;
+            //margin-bottom: 4px;
+            float: left;
+            margin-right: 30px;
+            margin-bottom: 16px;
+            font-size: 14px;
+          }
+        }
+      }
+      .cate-box{
+        .main-c{
+          padding-top: 30px;
+          .main-c-t{
+            text-align: center;
+            line-height: 1;
+            margin-bottom: 40px;
+            .title{
+              display: inline-block;
+              margin-bottom: 10px;
+              font-size: 24px;
+              font-weight: 700;
+              line-height: 44px;
+            }
+            .min-title{
+              font-size: 14px;
+              color: #999;
+              line-height: 1.5;
+            }
+          }
+          .main-c-b{
 
-  .fenlei{
-
-    dl{
-      padding:pTr(20px) pTr(30px);border-bottom:pTr(1px) solid #666;overflow: hidden;
-      dt{font-size:[pTr(12px)];float:left;color:#666;}
-      dd{font-size:[pTr(12px)];float:left;margin:0 pTr(10px);}
+            ul{
+              margin-right: -10px;
+              overflow: hidden;
+              li{
+                float: left;
+                margin-right: 10px;
+                margin-bottom: 50px;
+                width: 245px;
+                height: 361px;
+                font-size: 13px;
+                text-align: center;
+                line-height: 1;
+                .img{
+                  overflow: hidden;
+                  margin-bottom: 8px;
+                  &:hover a.img-a img{
+                    -webkit-transform: scale(1.05);
+                    -moz-transform: scale(1.05);
+                    -ms-transform: scale(1.05);
+                    transform: scale(1.05);
+                  }
+                  a.img-a{
+                    img{
+                      width: 245px;
+                      height: 245px;
+                      transition: transform 1s,-webkit-transform 1s;
+                      border: 1px solid transparent;
+                      display: block;
+                      margin: 0 auto;
+                    }
+                  }
+                }
+                .main-c-b-b{
+                  .biaoqian{
+                    width: 200px;
+                    height: 20px;
+                    margin: 0 auto 3px;
+                    overflow: hidden;
+                    .bq-a{
+                      @include tag(#F28F2D);
+                    }
+                    .bq-b{
+                      @include tag(#E36844);
+                    }
+                  }
+                  .title{
+                    height: 20px;
+                    padding: 0 10px;
+                    margin-bottom: 4px;
+                    font-size: 13px;
+                    font-weight: 600;
+                    line-height: 20px;
+                    a{
+                      color: #333;
+                    }
+                  }
+                  .pic{
+                    display: inline-block;
+                    height: 20px;
+                    overflow: hidden;
+                    color: #d4282d;
+                    line-height: 22px;
+                  }
+                  .m-title{
+                    width: 100%;
+                    padding: 0 10px;
+                    line-height: 18px;
+                    color: #999;
+                  }
+                  hr{
+                    display: block;
+                    width: 130px;
+                    height: 1px;
+                    margin: 6px auto 14px;
+                    padding: 0;
+                    border: 0;
+                    border-top: 1px solid #E8E8E8;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
+
 }

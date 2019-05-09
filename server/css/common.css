@@ -133,7 +133,7 @@ nav {
         background: #fff;
         border: 0.05rem solid rgba(0, 0, 0, 0.1);
         border-radius: 0.25rem;
-        z-index: 2;
+        z-index: 3;
         top: 2.1rem;
         right: -1.25rem; }
         nav .nav-t .nav-t-l .cart-box:before {

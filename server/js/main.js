@@ -71,7 +71,7 @@ require(["jquery"],function (_jq) {
             let str = "";
             for(let i=0;i<this.json.length;i++){
                 var sLi = "";
-                sLi += `<li><a class="nav-li" href="#">${this.json[i].title}</a>`;
+                sLi += `<li><a class="nav-li" href="${this.json[i].href}">${this.json[i].title}</a>`;
                 if(this.json[i].data != undefined){
                     sLi += `<div class="nav-b-box">
                                 <div class="nav-b-box-main clear">`;

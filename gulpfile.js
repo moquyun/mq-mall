@@ -27,27 +27,35 @@ gulp.task("index",()=>{
 });
 //sass改变编译后更新到server
 gulp.task("sass",()=>{
-    // gulp.src("www/sass/common.scss")
-    //     .pipe(sass().on("error",sass.logError))
-    //     .pipe(gulp.dest("server/css"))
-    //     .pipe(minifyCSS())
-    //     .pipe(rename('common.min.css'))
-    //     .pipe(gulp.dest("server/css"))
-    //     .pipe(connect.reload());
-    //
-    // gulp.src("www/sass/index.scss")
-    //     .pipe(sass().on("error",sass.logError))
-    //     .pipe(gulp.dest("server/css"))
-    //     .pipe(minifyCSS())
-    //     .pipe(rename('index.min.css'))
-    //     .pipe(gulp.dest("server/css"))
-    //     .pipe(connect.reload());
+    gulp.src("www/sass/common.scss")
+        .pipe(sass().on("error",sass.logError))
+        .pipe(gulp.dest("server/css"))
+        .pipe(minifyCSS())
+        .pipe(rename('common.min.css'))
+        .pipe(gulp.dest("server/css"))
+        .pipe(connect.reload());
+
+    gulp.src("www/sass/index.scss")
+        .pipe(sass().on("error",sass.logError))
+        .pipe(gulp.dest("server/css"))
+        .pipe(minifyCSS())
+        .pipe(rename('index.min.css'))
+        .pipe(gulp.dest("server/css"))
+        .pipe(connect.reload());
 
     gulp.src("www/sass/list.scss")
         .pipe(sass().on("error",sass.logError))
         .pipe(gulp.dest("server/css"))
         .pipe(minifyCSS())
         .pipe(rename('list.min.css'))
+        .pipe(gulp.dest("server/css"))
+        .pipe(connect.reload());
+
+    gulp.src("www/sass/goods.scss")
+        .pipe(sass().on("error",sass.logError))
+        .pipe(gulp.dest("server/css"))
+        .pipe(minifyCSS())
+        .pipe(rename('goods.min.css'))
         .pipe(gulp.dest("server/css"))
         .pipe(connect.reload());
 });
@@ -68,7 +76,7 @@ gulp.task("server",()=>{
    connect.server({
       root:"server",
        port:8080,
-       host:'192.168.1.101',
+       host:'10.11.58.100',
        livereload:true,//是否可以自动刷新
        middleware:function(connect,opt){
             return [

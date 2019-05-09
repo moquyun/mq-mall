@@ -1,9 +1,11 @@
 [
   {
-    "title":"首页"
+    "title":"首页",
+    "href":"/"
   },
   {
     "title":"家居",
+    "href":"/list.html",
     "data":[
       {
         "title":"床品",
@@ -74,6 +76,7 @@
   },
   {
     "title":"箱包服饰",
+    "href":"/list.html",
     "data":[
       {
         "title":"床品",
@@ -174,6 +177,7 @@
   },
   {
     "title":"母婴",
+    "href":"/list.html",
     "data":[
       {
         "title":"床品",
@@ -274,6 +278,7 @@
   },
   {
     "title":"家电",
+    "href":"/list.html",
     "data":[
       {
         "title":"床品",
@@ -374,6 +379,7 @@
   },
   {
     "title":"图书",
+    "href":"/list.html",
     "data":[
       {
         "title":"床品",
@@ -474,6 +480,7 @@
   },
   {
     "title":"美食",
+    "href":"/list.html",
     "data":[
       {
         "title":"床品",
@@ -574,6 +581,7 @@
   },
   {
     "title":"洗护",
+    "href":"/list.html",
     "data":[
       {
         "title":"床品",
@@ -674,6 +682,7 @@
   },
   {
     "title":"生活",
+    "href":"/list.html",
     "data":[
       {
         "title":"床品",
@@ -772,7 +781,7 @@
       }
     ]
   },
-  {"title":"超值精品"},
-  {"title":"限时秒杀"},
-  {"title":"品牌专区"}
+  {"title":"超值精品","href":"/list.html"},
+  {"title":"限时秒杀","href":"/list.html"},
+  {"title":"品牌专区","href":"/list.html"}
 ]
