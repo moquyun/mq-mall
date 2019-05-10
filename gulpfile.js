@@ -76,7 +76,7 @@ gulp.task("server",()=>{
    connect.server({
       root:"server",
        port:8080,
-       host:'10.11.58.100',
+       host:'10.11.58.101',
        livereload:true,//是否可以自动刷新
        middleware:function(connect,opt){
             return [
