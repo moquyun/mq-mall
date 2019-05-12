@@ -18,21 +18,26 @@
 
 
 ### 网站文件  
-├── gulpfile.js // 服务端js `npm all`   
-├── server.js // node服务(---弃用，改为gulpfile.js---)  
-├── lib // node方法封装-   
-│ └── db.js // 使用mysql模块封装增删查改-  
-├── node_modules // node模块-   
-│ └── mysql // mysql模块-  
-├── www // 网站文件原始文件  
-│ │── common // 公共组件  
-│ ├── css // css样式文件夹  
-│ ├── images // 图片文件夹  
-│ ├── js // js文件夹  
-│ └── index.html // 网站首页  
-├── server // 服务器指向根目录  
-│ │── common // 公共组件  
-│ ├── css // css样式文件夹  
-│ ├── images // 图片文件夹  
-│ ├── js // js文件夹  
-│ └── index.html // 网站首页  
+ 
+
+├── www  **网站文件原始文件**  
+│ │── images 
+│ ├── js    
+│ ├── libs  `公共资源`
+│ ├── sass  `网站scss样式`
+│ ├── goods.html  `产品详情页`
+│ ├── index.html  `网站首页`
+│ ├── layout.html `公共加载`
+│ └── index.html  `网站首页`  
+├── server **服务器指向根目录**  
+│ │── css  
+│ ├── images   
+│ ├── js  
+│ ├── json  `服务器json数据模拟` 
+│ ├── libs  `公共资源` 
+│ ├── goods.html  `产品详情页`
+│ ├── index.html  `网站首页`
+│ ├── layout.html `公共加载`
+│ └── index.html  `网站首页` 
+│ 
+├── gulpfile.js // 服务端js `启动npm all`  

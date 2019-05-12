@@ -15,6 +15,7 @@ node_modules/
 .DS_Store
 package-lock.json
 lib/
+server.js
 
 www/sass/none.scss
 ----.html

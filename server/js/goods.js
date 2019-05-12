@@ -78,6 +78,3 @@ require(["mQy"],function (mq) {
         new Goods();
     },1000);//500有时捕获不到DOM
 });
-[1,11,22,2]
-arr.sort(,)
-
