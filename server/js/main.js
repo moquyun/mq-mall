@@ -195,5 +195,5 @@ require(["jquery","mQy"],function (_jq,mq) {
         }
     }
 
-    new LayoutInit;
+    return new LayoutInit;
 });
